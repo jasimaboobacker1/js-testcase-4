@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Signs</title>
+</head>
+<body>
+    <div class="container" style="width: 100%;height: auto;display: flex;justify-content: center;margin-top: 40px;">
+        <div class="cont" style="width: 300px;height:auto;background-color: #b81818;display: flex;flex-direction: column;padding: 50px;gap: 10px;">
+            <label for="first" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter the first number</label>
+            <input type="text" id="first" placeholder="Enter the first number" style="padding: 6px;">
+            <label for="second" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter the second number</label>
+            <input type="text" id="second" placeholder="Enter the second number" style="padding: 6px;">
+            <button onclick="check()" style="padding: 5px;border: none;border-radius: 7px;">Check Signs</button>
+            <p id="result" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;"></p>
+        </div>
+    </div>
+
+    <script>
+        function check() {
+            const firstNumber = parseInt(document.getElementById('first').value);
+            const secondNumber = parseInt(document.getElementById('second').value);
+
+            if ((firstNumber >= 0 && secondNumber < 0) || (firstNumber < 0 && secondNumber >= 0)) {               
+                 document.getElementById('result').textContent = "One number is positive and the other is negative.";
+            } else if(firstNumber < 0 && secondNumber < 0) {
+                document.getElementById('result').textContent = "Both are negetive";       
+            }else if(firstNumber >= 0 && secondNumber >= 0){
+                document.getElementById('result').textContent = "Both are Possitive";       
+            }
+            document.getElementById('first').value = "";
+            document.getElementById('second').value = "";
+        }
+    </script>
+</body>
+</html>

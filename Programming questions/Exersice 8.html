@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Square Checker</title>
+</head>
+<body>
+    <div class="container" style="width: 100%;height: auto;display: flex;justify-content: center;margin-top: 40px;">
+        <div class="cont" style="width: 300px;height:auto;background-color: #b81818;display: flex;flex-direction: column;padding: 50px;gap: 10px;">
+            <label for="num" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter the number</label>
+            <input type="text" id="num" placeholder="Enter the number" style="padding: 6px;">
+            <button onclick="checkPerfectSquare()" style="padding: 5px;border: none;border-radius: 7px;">Check</button>
+            <p id="result" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkPerfectSquare() {
+            const num = parseInt(document.getElementById('num').value);
+            const sqrt = Math.sqrt(num);
+            if (sqrt * sqrt === num) {
+                document.getElementById('result').textContent = `${num} is a perfect square.`;
+            } else {
+                document.getElementById('result').textContent = `${num} is not a perfect square.`;
+            }
+            document.getElementById('num').value = "";
+        }
+    </script>
+</body>
+</html>

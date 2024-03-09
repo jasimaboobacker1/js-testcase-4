@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of rectangle</title>
+</head>
+<body>
+    <div class="container" style="width: 100%;height: auto;display: flex;justify-content: center;margin-top: 40px;">
+        <div class="cont" style="width: 300px;height:auto;background-color: #b81818;display: flex;flex-direction: column;padding: 50px;gap: 10px;">
+            <label for="" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter the length</label>
+            <input type="text" id="length" placeholder="enter the length" style="padding: 6px;">
+            <label for="" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter the Width</label>
+            <input type="text" id="width" placeholder="enter the width" style="padding: 6px;">
+            <button onclick="calculateArea()" style="padding: 5px;border: none;border-radius: 7px;">Calculate</button>
+            <p id="result" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateArea() {
+            const length = parseFloat(document.getElementById('length').value);
+            const width = parseFloat(document.getElementById('width').value);
+            const area = length * width;
+            document.getElementById('result').textContent = `Area: ${area}`;
+            document.getElementById('length').value = "";
+            document.getElementById('width').value = "";
+        }
+    </script>
+</body>
+</html>
