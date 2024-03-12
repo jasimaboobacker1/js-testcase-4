@@ -110,12 +110,17 @@ function AddBook() {
         return;
     }
 
-    const message = `Book Name: ${bookName}\nAuthor: ${authorName}\nDescription: ${description}`;
+    const newBook = { title: bookName, author: authorName, description: description };
+    books.push(newBook);
+    displayBooks(books);
+
+    const message = `Book Name: ${bookName}\nAuthor: ${authorName}\nDescription: ${description}\nAdded Succesfully`;
     alert(message);
     const modal = document.getElementById('exampleModal');
     const modalInstance = bootstrap.Modal.getInstance(modal);
     modalInstance.hide();
 }
+
 
         function displayBooks(booksToShow) {
             const container = document.getElementById("book-list");
@@ -130,10 +135,11 @@ function AddBook() {
                     const card = document.createElement('div');
                     card.id = 'card'; 
                     card.innerHTML = `
-                        <h3 style="font-size: 24px;">${book.title}</h3>
-                        <h5 style="font-size: 17px;">Author: ${book.author}</h5>
-                        <p style="font-size: 15px;">Description: ${book.description}</p>
-                    `;
+                    <h3 style="font-size: 18px;">${book.title}</h3>
+                    <h5 style="font-size: 17px;">Author: ${book.author}</h5>
+                    <p style="font-size: 15px;">Description: ${book.description}</p>
+                   
+                `;
                     container.appendChild(card);
                 });
             }
