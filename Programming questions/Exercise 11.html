@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercise 11</title>
+</head>
+<body>
+    <div class="container" style="width: 100%;height: auto;display: flex;justify-content: center;margin-top: 40px;">
+        <div class="cont" style="width: 300px;height:auto;background-color: #b81818;display: flex;flex-direction: column;padding: 50px;">
+            <label for="" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter First number</label>
+            <input type="number" id="num1" name="num1" placeholder="enter first number" style="padding: 6px;" required><br><br>
+            <label for="" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter Second number</label>
+            <input type="number" id="num2" name="num2" placeholder="enter first number" style="padding: 6px;" required><br><br>
+            <button onclick="checkNumbers(event)" style="padding: 5px;border: none;border-radius: 7px;">Check</button>
+            <p id="result" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;"></p>
+        </div>
+    </div>z
+
+<script>
+function checkFor50(num1, num2) {
+    return num1 === 50 || num2 === 50 || num1 + num2 === 50;
+}
+
+function checkNumbers(event) {
+    event.preventDefault();
+    const num1 = parseInt(document.getElementById('num1').value);
+    const num2 = parseInt(document.getElementById('num2').value);
+    const result = checkFor50(num1, num2);
+    document.getElementById('result').textContent = 'Result: ' + result;
+}
+</script>
+</body>
+</html>

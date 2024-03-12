@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 6</title>
+    <script>
+        function getDayOfWeek() {
+            const dateString = document.getElementById('dateInput').value;
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const date = new Date(dateString);
+            const dayIndex = date.getDay();
+            const dayOfWeek = daysOfWeek[dayIndex];
+            document.getElementById('result').textContent = dayOfWeek;
+        }
+    </script>
+</head>
+<body>
+    <div class="container" style="width: 100%;height: auto;display: flex;justify-content: center;margin-top: 40px;">
+        <div class="cont" style="width: 300px;height:auto;background-color: #b81818;display: flex;flex-direction: column;padding: 50px;">
+            <label for="dateInput" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Enter a date</label>
+            <input type="text" id="dateInput" placeholder="YYYY-MM-DD" style="padding: 6px;" required><br><br>
+            <button onclick="getDayOfWeek()" style="padding: 5px;border: none;border-radius: 7px;">Check</button>
+            <p id="result" style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;"></p>
+        </div>
+    </div>
+</body>
+</html>
